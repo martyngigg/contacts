@@ -7,7 +7,10 @@ class Person
   attr_reader :firstname, :lastname
 
   def initialize(firstname, lastname)
-    fail ArgumentError if firstname.length == 0 || lastname.length == 0
+    fail ArgumentError,\
+         'Both first & last names are required: '\
+         "firstname=#{firstname} lastname=#{lastname}"\
+         if firstname.length == 0 || lastname.length == 0
     @firstname = firstname
     @lastname = lastname
   end

@@ -15,15 +15,13 @@ class PersonTest < MiniTest::Test
 
 #------------------ Failure tests ------------------------
   def test_empty_firstname_raises_error
-    assert_raises ArgumentError do
-      Person.new('', 'Bloggs')
-    end
+    err = assert_raises(ArgumentError) { Person.new('', 'Bloggs') }
+    refute_equal '', err.message
   end
 
   def test_empty_lastname_raises_error
-    assert_raises ArgumentError do
-      Person.new('Joe', '')
-    end
+    err = assert_raises(ArgumentError) { Person.new('Joe', '') }
+    refute_equal '', err.message
   end
 
 end
