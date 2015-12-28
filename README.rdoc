@@ -1,0 +1,3 @@
+= Contacts
+
+The application manages a set of contacts.
